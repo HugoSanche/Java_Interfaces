@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Interfaces_28e6891"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -17,5 +24,6 @@
             "mainClass": "Inicio",
             "projectName": "Interfaces_28e6891"
         }
+       
     ]
 }

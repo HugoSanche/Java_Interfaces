@@ -1,8 +1,11 @@
 package service;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import pojo.Checking;
 import repository.AccountRepository;
 
-public class CheckingService {
+public class CheckingService implements AccountService{
     AccountRepository accountRepository;
 
     public CheckingService(AccountRepository accountRepository) {
@@ -23,5 +26,17 @@ public class CheckingService {
 
     public void deleteAccount(String id) {
         this.accountRepository.deleteAccount(id);
+    }
+    @Override
+    public void deposit(String id, BigDecimal amount) {
+        Checking checking=retrieveAccount(id);
+        checking.getBalance().add(amount);
+        updateAccount(checking);
+    }
+    @Override
+    public void withdraw(String id, BigDecimal amount) {
+        Checking checking=retrieveAccount(id);
+        checking.getBalance().subtract(amount);
+        updateAccount(checking);
     }
 }
