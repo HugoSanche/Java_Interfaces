@@ -6,6 +6,10 @@ enum FlightStages implements Trackeable{GROUNDED,LAUNCH,CRUISE,DATA_COLLECTION;
             System.out.println("Monitoring "+this);
         }
     }
+    public FlightStages getNextStage(){
+        FlightStages[] allStages= values();
+        return allStages[ordinal()+1 % allStages.length];
+    }
 }
 
 //NOTA.- usually records does not use methods but in this case need to implement methods of FligEnable
