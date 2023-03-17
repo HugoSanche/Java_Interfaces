@@ -11,8 +11,8 @@ public interface FlightEnable {
 
     abstract void land(); //its noy necessary write abstract
 
-    void fly(); //its ok
-  //  protected  void test(); protected its not allow in interfaces
+    void fly(); //it's ok
+  //  protected  void test(); protected it's not allow in interfaces
 
     default FlightStages transition(FlightStages stage){
        // System.out.println("Transitions not implemented "+getClass().getName());
