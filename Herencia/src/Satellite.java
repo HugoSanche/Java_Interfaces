@@ -1,4 +1,4 @@
-//NOTA.- this class need to implement methods of OrbitEarth and FlighEarth
+//NOTA.- this class need to implement methods of OrbitEarth and FlighEnable
 
 public class Satellite implements OrbitEarth {
     FlightStages stage=FlightStages.GROUNDED;
@@ -24,7 +24,11 @@ public class Satellite implements OrbitEarth {
     }
     public void transition(String description){
         System.out.println(description);
+        System.out.println("x "+stage);
         stage=transition(stage);
+        System.out.println("Y "+stage);
+
+        //System.out.println("Hola");
         stage.track();
     }
 }

@@ -1,6 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-        inFlight(new Jet());
+      //  inFlight(new Jet());
        // OrbitEarth.log("Testing "+new Satellite());
         orbith(new Satellite());
     }
@@ -17,6 +17,6 @@ public class Test {
     private static void orbith(OrbitEarth flier){
         flier.takeOff();
         flier.fly();
-        flier.land();
+        //flier.land();
     }
 }

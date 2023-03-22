@@ -1,4 +1,4 @@
-//NOTA.-CHECK USE THE KEY WORD EXTENDS NOT USE IMPLEMENTES.
+//NOTA.-CHECK USE THE KEY WORD EXTENDS NOT USE IMPLEMENT.
 //INTERFACE USE EXTENDS
 
 
@@ -18,6 +18,7 @@ public interface OrbitEarth extends FlightEnable {
 
     @Override
     default FlightStages transition(FlightStages stage) {
+        System.out.println("Aqi");
         FlightStages nextStage=FlightEnable.super.transition(stage);
         logStage(stage, "Begin Transition to " +nextStage);
         return nextStage;
