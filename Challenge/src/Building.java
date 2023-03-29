@@ -1,6 +1,6 @@
 
- enum UsageType{BUSINESS,ENTERTAINMENT,GOVERNMENT, RESIDENTIAL, SPORTS}
-public class Building implements Mappable {
+ enum UsageType{BUSINESS,ENTERTAINMENT,GOVERNMENT, RESIDENTIAL, SPORTS,RESTAURANT}
+public class Building <T> implements Mappable {
 
     private String name;
     private UsageType type;
@@ -26,15 +26,14 @@ public class Building implements Mappable {
             default -> Color.RED+" "+PointMarker.SQUARE;
         };
     }
+    @Override
+    public Geometry getShape() {
+        return Geometry.POINT;
+    }
 
     @Override
     public String toJSON() {
         return  Mappable.super.toJSON()+ """ 
                 , "Name :" "%s" """.formatted(name);
-    }
-
-    @Override
-    public Geometry getShape() {
-        return Geometry.POINT;
     }
 }
